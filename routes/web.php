@@ -15,16 +15,19 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-Route::get('usuarios', function() {
-    return view('usuarios.index');
-})->name('usuarios.all');
-Route::resource('api/usuarios', 'UsersController');
+Route::group(['middleware' => 'auth'], function() {
+    Route::get('usuarios', function() {
+	    return view('usuarios.index');
+	})->name('usuarios.all');
+	Route::resource('api/usuarios', 'UsersController');
 
-Route::get('contribuyentes', function() {
-    return view('contribuyentes.index');
-})->name('contribuyentes.all');
+	Route::get('contribuyentes', function() {
+	    return view('contribuyentes.index');
+	})->name('contribuyentes.all');
 
-Route::resource('api/contribuyentes', 'CustomersController');
+	Route::resource('api/contribuyentes', 'CustomersController');
+
+});
 
 Auth::routes();
 
