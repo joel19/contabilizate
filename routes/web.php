@@ -15,6 +15,17 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
+Route::get('usuarios', function() {
+    return view('usuarios.index');
+})->name('usuarios.all');
+Route::resource('api/usuarios', 'UsersController');
+
+Route::get('contribuyentes', function() {
+    return view('contribuyentes.index');
+})->name('contribuyentes.all');
+
+Route::resource('api/contribuyentes', 'CustomersController');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

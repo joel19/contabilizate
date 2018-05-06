@@ -1,1 +1,9 @@
 body { padding-top: 70px; }
+
+.show{
+	display: block !important;
+}
+
+p.error-text{
+	margin-bottom: 0px;
+}
