@@ -1,0 +1,29 @@
+<md-dialog aria-label="Eliminar Usuario" ng-init="init()">
+    <form ng-cloak>
+        <md-toolbar class="eliminarModal">
+            <div class="md-toolbar-tools">
+                <h2>{{super.user.name + ' ' + super.user.last_name}}</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="cancel()">
+                    <i class="fa fa-times fa-2x"></i>
+              </md-button>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content>
+            <div class="md-dialog-content">
+                <h4>¿Realmente desea eliminar este usuario?</h4>
+            </div>
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row">
+            <span flex></span>
+            <md-button ng-click="cancel()">
+                Cancelar
+            </md-button>
+            <md-button ng-click="confirm()">
+                Aceptar
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

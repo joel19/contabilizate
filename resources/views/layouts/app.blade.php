@@ -16,14 +16,13 @@
     <link href="{{ asset('font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
     <!-- Custom styles for this template-->
     <link href="{{ asset('sb-admin/sb-admin.css') }}" rel="stylesheet">
-    <!-- Angular Material styles -->
-    <link rel="stylesheet" href="{{ asset('node_modules/angular-material/angular-material.css') }}">
+    <link rel="stylesheet" href="{{ asset('datatables/dataTables.bootstrap4.css') }}">
     <!-- Styles app -->
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
 </head>
 <body @if (Auth::guest())
     class="bg-dark" 
-@endif ng-cloak>
+@endif ng-cloak id="page-top">
     <div id="app"  ngCloak
     @if (Auth::guest())
         class="bg-dark" 
@@ -101,18 +100,16 @@
         @yield('content')
     </div>
 
+
     <!-- Bootstrap core JavaScript-->
     <script src="{{ asset('jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <!-- Scripts sb-admin -->
     <script src="{{ asset('sb-admin/sb-admin.min.js') }}"></script>
+    <script src="{{ asset('datatables/jquery.dataTables.js') }}"></script>
+    <script src="{{ asset('datatables/dataTables.bootstrap4.js') }}"></script>
     <!-- Angular scripts -->
     <script src="{{ asset('node_modules/angular/angular.min.js') }}"></script>
-    <script src="{{ asset('node_modules/angular-animate/angular-animate.min.js') }}"></script>
-    <script src="{{ asset('node_modules/angular-aria/angular-aria.min.js') }}"></script>
-    <script src="{{ asset('node_modules/angular-messages/angular-messages.min.js') }}"></script>
-    <!-- Angular material scripts -->
-    <script src="{{ asset('node_modules/angular-material/angular-material.min.js') }}"></script>
     <script src="{{ asset('js/index.js') }}"></script>
     <script src="{{ asset('js/directivas.js') }}"></script>
     @yield('scripts')

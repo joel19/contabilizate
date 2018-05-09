@@ -1,1 +1,1 @@
-angular.module('contabilizateApp', ['ngMaterial']);
+angular.module('contabilizateApp', []);

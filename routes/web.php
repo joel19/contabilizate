@@ -1,5 +1,7 @@
 <?php
 
+use Contabilizate\Regimen;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,10 +24,11 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::resource('api/usuarios', 'UsersController');
 
 	Route::get('contribuyentes', function() {
-	    return view('contribuyentes.index');
+		$regimenes = Regimen::all();
+	    return view('contribuyentes.index', compact('regimenes'));
 	})->name('contribuyentes.all');
 
-	Route::resource('api/contribuyentes', 'CustomersController');
+	Route::resource('api/contribuyentes', 'ContributorsController');
 
 });
 

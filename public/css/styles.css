@@ -4,6 +4,45 @@ body { padding-top: 70px; }
 	display: block !important;
 }
 
+.text-white{
+	color: #FFF;
+}
+
 p.error-text{
 	margin-bottom: 0px;
+}
+
+.btn-table{
+	width:78.23px !important;
+	margin-bottom: 5%;
+}
+
+.eliminarModal{
+	background: red !important;
+	color: #FFF !important;
+}
+
+#eliminarUsuario button.btn-primary{
+	background-color: red !important;
+	color: #FFF !important;
+}
+
+.agregarModal{
+	background: #007bff !important;
+	color: #FFF !important;
+}
+
+#agregarUsuario button.btn-primary{
+	background-color: #007bff !important;
+	color: #FFF !important;
+}
+
+.editarModal{
+	background: #17a2b8 !important;
+	color: #FFF !important;
+}
+
+#editarUsuario button.btn-primary{
+	background-color: #17a2b8 !important;
+	color: #FFF !important;
 }

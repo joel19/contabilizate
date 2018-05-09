@@ -10,7 +10,7 @@
                 <div class="col-md-12 form-group">
                     <label for="name" class="control-label">Nombre:</label>
                     <div>
-                        <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus ng-model="register.name" minlength="2" ng-pattern="'[a-zA-Z]+'">
+                        <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus ng-model="register.name" minlength="2" ng-pattern="'[a-zA-ZñÑáéíóúÁÉÍÓÚ\\s]+'">
                         <div class="invalid-feedback" ng-class="{'show': registerForm.name.$dirty && registerForm.name.$invalid}" ng-if="registerForm.name.$dirty && registerForm.name.$invalid">
                             <strong>
                                 <p ng-if="registerForm.name.$error.minlength" class="error-text">El nombre debe contener al menos 2 caracteres.</p>

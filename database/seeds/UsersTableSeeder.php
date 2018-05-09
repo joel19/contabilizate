@@ -1,8 +1,9 @@
 <?php
 
+use Contabilizate\User;
 use Illuminate\Database\Seeder;
 
-class DatabaseSeeder extends Seeder
+class UsersTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +12,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(RegimensTableSeeder::class);
+        factory(Contabilizate\User::class, 50)->create();
     }
 }

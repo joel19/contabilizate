@@ -2,10 +2,22 @@
 
 namespace Contabilizate\Http\Controllers;
 
+use Contabilizate\User;
 use Illuminate\Http\Request;
 
 class UsersController extends Controller
 {
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +25,9 @@ class UsersController extends Controller
      */
     public function index()
     {
-        //
+        $usuarios = User::all();
+
+        return response()->json($usuarios->toArray());
     }
 
     /**
@@ -45,7 +59,8 @@ class UsersController extends Controller
      */
     public function show($id)
     {
-        //
+        $usuario = User::findOrFail($id);
+        return response()->json($usuario->toArray());
     }
 
     /**
@@ -79,6 +94,9 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $usuario = User::findOrFail($id);
+        $usuario->delete();
+        $respuesta = ['mensaje' => 'Usuario eliminado correctamente'];
+        return response()->json($respuesta);
     }
 }
