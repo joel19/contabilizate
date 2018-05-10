@@ -67,7 +67,6 @@ class ContributorsController extends Controller
             $nombreCer = $fileCer->getClientOriginalName();
             $nombreKey = $fileKey->getClientOriginalName();
             //Guardo archivos en storage
-            dd($this->storeFile($request->rfc, $fileCer, $nombreCer));
             $this->storeFile($request->rfc, $fileCer, $nombreCer);
             $this->storeFile($request->rfc, $fileKey, $nombreKey);
             //Rutas de archivos cer y key
