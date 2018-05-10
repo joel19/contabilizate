@@ -50,7 +50,7 @@ class RegimensTableSeeder extends Seeder
                 'regimen_id' => '2', 
             ]
         ];
-        DB::table('contributors')->insert($con);
          DB::table('regimens')->insert($regimens);
+         DB::table('contributors')->insert($con);
     }
 }
