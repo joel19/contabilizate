@@ -1,7 +1,8 @@
 $(document).ready(function() {
 	var data;
-    var host = window.location.origin;
-	var apiurl = host + "/api/usuarios";
+    var protocolo = window.location.protocol;
+    var host = window.location.host;
+    var apiurl = protocolo + "//" + host + "/api/usuarios";
 	var table = $('#dataTable').DataTable({
         "language": {
             "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"

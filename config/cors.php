@@ -12,7 +12,7 @@ return [
      */
     'supportsCredentials' => false,
     'allowedOrigins' => ['https://contabilizate12.herokuapp.com/'],
-    'allowedHeaders' => ['Content-Type', 'application/json'],
+    'allowedHeaders' => ['Content-Type', 'X-Requested-With'],
     'allowedMethods' => ['*'], // ex: ['GET', 'POST', 'PUT',  'DELETE']
     'exposedHeaders' => [],
     'maxAge' => 0,
