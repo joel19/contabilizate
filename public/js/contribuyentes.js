@@ -2,8 +2,8 @@ $(document).ready(function() {
 	var data;
     var protocolo = window.location.protocol;
     var host = window.location.host;
-	var apiurl = protocolo + "://" + host + "/api/contribuyentes/";
-    
+	var apiurl = protocolo + "//" + host + "/api/contribuyentes/";
+    console.log(apiurl);
 	var table = $('#cbyTable').DataTable({
         "order": [[ 0, "desc" ]],
         "language": {
