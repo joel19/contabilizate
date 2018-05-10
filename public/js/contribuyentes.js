@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	var data;
-    var apiurlHeroku = "https://contabilizate12.herokuapp.com/api/contribuyentes/";
-    var apiurlLocal = "api/contribuyentes/";
+    var apiurl = "https://contabilizate12.herokuapp.com/api/contribuyentes";
+    
 	var table = $('#cbyTable').DataTable({
         "order": [[ 0, "desc" ]],
         "language": {
@@ -9,7 +9,7 @@ $(document).ready(function() {
             "searchPlaceholder": "RFC o nombre"
         },
         "ajax": {
-			        url: apiurlHeroku,
+			        url: apiurl,
 			       	dataSrc: '',
                     'beforeSend': function (request) {
                         request.setRequestHeader("Content-Type", 'application/json');
@@ -41,7 +41,7 @@ $(document).ready(function() {
     	$("#eliminarContribuyente").on('shown.bs.modal', function(e){
 			var id = data.id;
 			$("#nameModalTitle").text(data.name + " - " + data.rfc);
-			$('#deleteContrForm').attr("action", apiurl + id);
+			$('#deleteContrForm').attr("action", apiurl + "/" + id);
 			$('#deleteContrForm :input#id').attr("value", id);
 		});
 
@@ -49,7 +49,7 @@ $(document).ready(function() {
             $("#editContrForm select#eregimen_id option").removeAttr("selected");
 			var id = data.id;
             $("#editCTitle").text(data.name + " - " + data.rfc);
-            $('#editContrForm').attr("action", apiurl + id);
+            $('#editContrForm').attr("action", apiurl + "/" + id);
 			$('#editContrForm :input#ename').attr("value", data.name);
             $('#editContrForm :input#erfc').attr("value", data.rfc);
             $('#editContrForm :input#epass_key').attr("value", data.pass_key);
