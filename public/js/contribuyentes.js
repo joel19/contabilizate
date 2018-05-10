@@ -1,9 +1,7 @@
 $(document).ready(function() {
 	var data;
-    var protocolo = window.location.protocol;
-    var host = window.location.host;
-	var apiurl = protocolo + "//" + host + "/api/contribuyentes/";
-    console.log(apiurl);
+    var apiurlHeroku = "https://contabilizate12.herokuapp.com/api/contribuyentes/";
+    var apiurlLocal = "api/contribuyentes/";
 	var table = $('#cbyTable').DataTable({
         "order": [[ 0, "desc" ]],
         "language": {
@@ -11,7 +9,7 @@ $(document).ready(function() {
             "searchPlaceholder": "RFC o nombre"
         },
         "ajax": {
-			        url: apiurl,
+			        url: apiurlHeroku,
 			       	dataSrc: '',
                     'beforeSend': function (request) {
                         request.setRequestHeader("Content-Type", 'application/json');
