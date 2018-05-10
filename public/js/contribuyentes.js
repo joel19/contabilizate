@@ -19,7 +19,10 @@ $(document).ready(function() {
 			        { data: 'name' },
 			        { data: 'rfc' },
 			        { data: 'regimen_description', searchable: false },
-			        { data: 'alta' , searchable: false},		
+			        { data: 'alta' , searchable: false},
+                    { data: 'inicio' , searchable: false},
+                    { data: 'vigencia' , searchable: false},
+                    { data: 'num_serie' , searchable: false},	
 			        { data: 'operaciones' },				
 			    ],
 	    "columnDefs": [ {

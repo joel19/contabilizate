@@ -41,6 +41,9 @@
 			                  	<th>RFC</th>
 			                  	<th>Régimen</th>
 			                  	<th>Fecha de Alta</th>
+			                  	<th>Fecha Inicio</th>
+			                  	<th>Fecha Vigencia</th>
+			                  	<th>Serie</th>
 			                  	<th>Operaciones</th>
 			            	</tr>
 		              	</thead>			 

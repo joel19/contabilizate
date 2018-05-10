@@ -35,7 +35,12 @@ class ContributorsController extends Controller
             $contribuyentes->each(function($contribuyentes){
                 $contribuyentes->regimen_description = $contribuyentes->regimen->description;
                 $date = date_create($contribuyentes->created_at);
-                $contribuyentes->alta = $date->format('d/m/Y'); 
+                $contribuyentes->alta = $date->format('d/m/Y');
+                $dateIn = date_create($contribuyentes->start_date);
+                $contribuyentes->inicio = $contribuyentes->start_date ?  $dateIn->format('d/m/Y'): '-';
+                $dateVig = date_create($contribuyentes->end_date);
+                $contribuyentes->vigencia = $contribuyentes->end_date ? $dateVig->format('d/m/Y'): '-'; 
+                $contribuyentes->num_serie = $contribuyentes->num_serie ? $contribuyentes->num_serie: '-'; 
             });    
             return response()->json($contribuyentes->toArray());
         } catch (\Exception $e) {
