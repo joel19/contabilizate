@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="content-wrapper" ng-controller="ContributorsCtrl" ng-init="init()">
+<div class="content-wrapper">
     <div class="container-fluid">
     	<!-- Breadcrumbs-->
         <ol class="breadcrumb">
