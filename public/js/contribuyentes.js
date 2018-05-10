@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	var data;
     var host = window.location.origin;
-	var apiurl = host + "/api/contribuyentes/";
+	var apiurl = "https://contabilizate12.herokuapp.com/api/contribuyentes";
     
 	var table = $('#cbyTable').DataTable({
         "order": [[ 0, "desc" ]],
@@ -11,7 +11,10 @@ $(document).ready(function() {
         },
         "ajax": {
 			        url: apiurl,
-			       	dataSrc: ''
+			       	dataSrc: '',
+                    'beforeSend': function (request) {
+                        request.setRequestHeader("Content-Type", 'application/json');
+                    }
 			    },
 		"columns": [
                     { data: 'id' },
