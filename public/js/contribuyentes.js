@@ -2,6 +2,7 @@ $(document).ready(function() {
 	var data;
     var host = window.location.origin;
 	var apiurl = host + "/api/contribuyentes/";
+    
 	var table = $('#cbyTable').DataTable({
         "order": [[ 0, "desc" ]],
         "language": {

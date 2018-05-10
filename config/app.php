@@ -176,6 +176,7 @@ return [
         // Contabilizate\Providers\BroadcastServiceProvider::class,
         Contabilizate\Providers\EventServiceProvider::class,
         Contabilizate\Providers\RouteServiceProvider::class,
+        Fideloper\Proxy\TrustedProxyServiceProvider::class,
 
     ],
 
