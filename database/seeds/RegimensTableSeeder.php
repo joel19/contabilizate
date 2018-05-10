@@ -51,5 +51,6 @@ class RegimensTableSeeder extends Seeder
             ]
         ];
         DB::table('contributors')->insert($con);
+         DB::table('regimens')->insert($regimens);
     }
 }

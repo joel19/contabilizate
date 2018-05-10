@@ -235,10 +235,10 @@ class Certificado{
 		
 		if (file_exists($nombreCerPem)){
 			$salida = shell_exec('openssl x509 -in '.$nombreCerPem.' -noout -subject 2>&1');
+
 			$salida = str_replace('notBefore=', '', $salida);
 			$info_preg = array();
-			preg_match('#/OU=(.*)#',
-			$salida,$info_preg);
+			preg_match('#/OU=(.*)#',$salida,$info_preg);
 			if(!empty($info_preg)){
 				$this->_estableceError(1, null, array('OU' => $info_preg[1]));
 				return $this->_return;

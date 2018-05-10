@@ -4,7 +4,7 @@ namespace Contabilizate;
 
 use Illuminate\Database\Eloquent\Model;
 
-class File extends Model
+class FileCer extends Model
 {
     protected $table = "files";
 

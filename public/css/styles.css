@@ -27,6 +27,12 @@ p.error-text{
 	color: #FFF !important;
 }
 
+.button-eliminar{
+	background-color: red !important;
+	color: #FFF !important;
+}
+
+
 .agregarModal{
 	background: #007bff !important;
 	color: #FFF !important;

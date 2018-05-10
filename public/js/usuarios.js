@@ -43,7 +43,7 @@ $(document).ready(function() {
     $("#deleteUserForm").on('submit', function(event) {
     	event.preventDefault();	
     	var user = $( this ).serializeArray();
-    	var urlP = $("#deleteUserForm").attr("action");
+    	var urlP = $(this).attr("action");
 
     	$.ajax({
     		url: urlP,
