@@ -2,16 +2,23 @@ $(document).ready(function() {
 	var data;
     var host = window.location.origin;
 	var apiurl = host + "/api/contribuyentes/";
+    $.ajax({
+        url: apiurl,
+    })
+    .done(function(response) {
+        data = response.data;
+    })
+    .fail(function(error) {
+        data = error.status;
+    });
+    
 	var table = $('#cbyTable').DataTable({
         "order": [[ 0, "desc" ]],
         "language": {
             "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json",
             "searchPlaceholder": "RFC o nombre"
         },
-        "ajax": {
-			        url: apiurl,
-			       	dataSrc: ''
-			    },
+        "data": data,
 		"columns": [
                     { data: 'id' },
 			        { data: 'name' },
