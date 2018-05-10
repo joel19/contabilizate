@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	var data;
     var protocolo = window.location.protocol;
-    var host = window.location.hots;
+    var host = window.location.host;
 	var apiurl = protocolo + "://" + host + "/api/contribuyentes/";
     
 	var table = $('#cbyTable').DataTable({
