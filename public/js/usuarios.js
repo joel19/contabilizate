@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	var data;
     var host = window.location.origin;
-	var apiurl = host + "/api/usuarios/";
+	var apiurl = host + "/api/usuarios";
 	var table = $('#dataTable').DataTable({
         "language": {
             "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
@@ -28,14 +28,14 @@ $(document).ready(function() {
     	$("#eliminarUsuario").on('shown.bs.modal', function(e){
 			var id = data.id;
 			$("#nameModalTitle").text(data.name + " " + data.last_name);
-			$('#deleteUserForm').attr("action", apiurl + id);
+			$('#deleteUserForm').attr("action", apiurl + "/" + id);
 			$('#deleteUserForm :input#id').attr("value", id);
 		});
 
 		$("#editarUsuario").on('shown.bs.modal', function(e){
 			var id = data.id;
 			$("").text(data.name + " " + data.last_name);
-			$('#deleteUserForm').attr("action", apiurl + id);
+			$('#deleteUserForm').attr("action", apiurl + "/" + id);
 			$('#deleteUserForm :input#id').attr("value", id);
 		});
     } );
